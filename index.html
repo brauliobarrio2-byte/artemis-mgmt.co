@@ -3,17 +3,21 @@
 :root{--bg:#16181c;--panel:#1e2126;--panel2:#25292f;--line:#363c44;--text:#e7e9ec;--muted:#9aa2ad;--blue:#4f8ef7;--blue-dim:#33507e;--amber:#e0ab3b;--amber2:#caa056;--green:#3fb87f;--red:#e2666a}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-main{max-width:1080px;margin:auto;padding:28px 5vw 60px}
+main{max-width:1180px;margin:auto;padding:28px 5vw 60px}
 header{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
 header b{letter-spacing:.02em}
 header .tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .banner{background:#2a2418;border:1px solid #4a3f22;color:#e8cd8a;padding:12px 16px;border-radius:8px;font-size:13.5px;margin-bottom:22px}
 .banner strong{color:#f3dea6}
-nav.modules{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-nav.modules button{font:inherit;font-size:13.5px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.layout{display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:start}
+nav.modules{display:flex;flex-direction:column;gap:6px;position:sticky;top:20px}
+nav.modules h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 4px;padding:0 4px}
+nav.modules button{font:inherit;font-size:13.5px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px 14px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:left}
 nav.modules button[aria-current="true"]{border-color:var(--blue);background:var(--blue-dim);color:#fff}
 nav.modules button[disabled]{cursor:not-allowed;color:var(--muted);opacity:.75}
 nav.modules .lock{font-size:11px;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--muted)}
+.content{min-width:0}
+@media(max-width:760px){.layout{grid-template-columns:1fr}nav.modules{position:static;flex-direction:row;flex-wrap:wrap}nav.modules button{width:auto}}
 h1{font-size:clamp(26px,3.4vw,34px);margin:0 0 6px;font-weight:650;letter-spacing:-.01em}
 .sub{color:var(--muted);margin:0 0 24px;max-width:640px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:20px}
@@ -66,7 +70,9 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
 
 <div class="banner"><strong>Sample data only.</strong> This is a simulated preview — schedules, coverage suggestions, and "published" status are pre-scripted for this demo. No live Wi-Fi, payroll, AI service, or real employee records are connected.</div>
 
+<div class="layout">
 <nav class="modules" aria-label="Artemis modules">
+  <h2>Modules</h2>
   <button type="button" aria-current="true">📅 Scheduling &amp; Coverage</button>
   <button type="button" disabled aria-disabled="true">👥 Departments &amp; Profiles <span class="lock">Preview</span></button>
   <button type="button" disabled aria-disabled="true">🕒 Time &amp; Payroll <span class="lock">Preview</span></button>
@@ -74,6 +80,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
   <button type="button" disabled aria-disabled="true">💬 Team Chat <span class="lock">Preview</span></button>
 </nav>
 
+<div class="content">
 <h1>Weekly Schedule — Review &amp; Approve</h1>
 <p class="sub">Check this week's proposed schedule for your department, resolve any coverage gaps, then approve it for employees to see — or send it back for edits.</p>
 
@@ -107,6 +114,8 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
 <footer>
   Build branch: <code>claude/loving-dirac-3lulbe</code>. Coverage suggestions are computed from the sample availability data shown above — not a live AI call. Preserve <code>examples/</code> and the current GitHub Pages setup while this preview is reviewed.
 </footer>
+</div>
+</div>
 </main>
 <script>
 (function(){
