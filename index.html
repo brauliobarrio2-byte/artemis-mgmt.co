@@ -19,7 +19,7 @@ nav.modules .lock{font-size:11px;background:var(--panel2);border:1px solid var(-
 .content{min-width:0}
 @media(max-width:760px){.layout{grid-template-columns:1fr}nav.modules{position:static;flex-direction:row;flex-wrap:wrap}nav.modules button{width:auto}}
 h1{font-size:clamp(26px,3.4vw,34px);margin:0 0 6px;font-weight:650;letter-spacing:-.01em}
-.sub{color:var(--muted);margin:0 0 24px;max-width:640px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:680px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:20px}
 .card h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 16px}
 .status-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
@@ -37,26 +37,38 @@ button.secondary:hover{border-color:var(--muted)}
 button.link-btn{background:none;border:none;color:var(--blue);padding:6px 0;text-decoration:underline;text-underline-offset:3px}
 button:disabled{opacity:.45;cursor:not-allowed}
 button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.dept-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px}
-.dept-row label{font-size:13px;color:var(--muted)}
-select{font:inherit;font-size:14px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--line)}
-th{color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
-td.name{font-weight:600}
-td.role{color:var(--muted);font-size:13px}
-.shift{display:inline-block;min-width:64px;text-align:center;padding:4px 8px;border-radius:6px;font-size:13px;font-weight:600}
-.shift.am{background:#1c2c44;color:#8fb4ea}
-.shift.pm{background:#2a2044;color:#c1a7f0}
-.shift.off{background:#24272c;color:var(--muted)}
-.shift.sick{background:#3a1e1e;color:#f0a3a3}
-.shift.covering{background:#173622;color:#7fe0ab}
-.sick-toggle{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);margin-top:4px}
-.suggestion{margin-top:16px;padding:14px 16px;background:#20293a;border:1px solid #33507e;border-radius:8px;font-size:14px}
+.cal-toolbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.month-nav{display:flex;align-items:center;gap:10px}
+.month-nav button{font:inherit;font-size:13px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+.month-nav span{font-weight:650;font-size:15px;min-width:150px;text-align:center}
+.section-filter{display:flex;flex-wrap:wrap;gap:8px}
+.section-filter button{font:inherit;font-size:12.5px;background:var(--panel2);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+.section-filter button[aria-pressed="true"]{background:var(--blue-dim);color:#fff;border-color:var(--blue)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.legend-item{display:inline-flex;align-items:center;gap:6px}
+.legend .dot{width:9px;height:9px;border-radius:3px;display:inline-block}
+.dot.sec-reception,.cal-entry.sec-reception{background:#1c2c44;color:#8fb4ea}
+.dot.sec-manager,.cal-entry.sec-manager{background:#2a2044;color:#c1a7f0}
+.dot.sec-floor,.cal-entry.sec-floor{background:#173622;color:#7fe0ab}
+.dot.sec-groupx,.cal-entry.sec-groupx{background:#3a2c14;color:#e8c07f}
+.overflow{overflow-x:auto}
+.calendar{min-width:700px}
+.cal-head{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px 8px 0 0;overflow:hidden}
+.cal-head div{background:var(--panel2);padding:8px;text-align:center;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none;border-radius:0 0 8px 8px;overflow:hidden}
+.cal-cell{background:var(--panel);padding:6px;min-height:104px;font-size:11.5px}
+.cal-cell.out-of-month{background:#1a1c20}
+.cal-cell.out-of-month .cal-date{color:#565c64}
+.cal-date{display:block;font-weight:700;font-size:12px;margin-bottom:4px;color:var(--muted)}
+.cal-entry{display:block;margin-bottom:3px;padding:2px 5px;border-radius:4px;line-height:1.3;overflow-wrap:anywhere}
+.cal-entry.sick{background:#3a1e1e;color:#f0a3a3}
+.cal-entry.covering{outline:2px dashed #7fe0ab;outline-offset:-2px}
+.absence-panel{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.sick-toggle{display:flex;align-items:center;gap:8px;font-size:13.5px}
+.suggestion{margin-top:14px;padding:14px 16px;background:#20293a;border:1px solid #33507e;border-radius:8px;font-size:14px}
 .suggestion.none{background:#241f1f;border-color:#4a3232;color:#e0a3a3}
 .suggestion strong{color:#fff}
 .suggestion .fine{display:block;margin-top:8px;font-size:12.5px;color:var(--muted)}
-.overflow{overflow-x:auto}
 footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-size:13px;color:var(--muted)}
 [hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -68,7 +80,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
   <span class="tag">Manager Preview · Sample Data</span>
 </header>
 
-<div class="banner"><strong>Sample data only.</strong> This is a simulated preview — schedules, coverage suggestions, and "published" status are pre-scripted for this demo. No live Wi-Fi, payroll, AI service, or real employee records are connected.</div>
+<div class="banner"><strong>Sample data only.</strong> This is a simulated preview — the schedule, coverage suggestion, and "published" status are pre-scripted for this demo. No live Wi-Fi, payroll, AI service, sendout/notification service, or real employee records are connected.</div>
 
 <div class="layout">
 <nav class="modules" aria-label="Artemis modules">
@@ -81,8 +93,8 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
 </nav>
 
 <div class="content">
-<h1>Weekly Schedule — Review &amp; Approve</h1>
-<p class="sub">Check this week's proposed schedule for your department, resolve any coverage gaps, then approve it for employees to see — or send it back for edits.</p>
+<h1>Monthly Schedule — Review &amp; Approve</h1>
+<p class="sub">Review the full month for every section in one calendar, or filter down to just Reception, Manager, Floor, or Group X. Resolve any coverage gap, then approve the month for employees to see — or send it back for edits.</p>
 
 <div class="card">
   <h2>Approval status</h2>
@@ -98,21 +110,46 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
 
 <div class="card">
   <h2>Schedule</h2>
-  <div class="dept-row">
-    <label for="dept-select">Department</label>
-    <select id="dept-select"></select>
+  <div class="cal-toolbar">
+    <div class="month-nav">
+      <button type="button" id="btn-prev-month" aria-label="Previous month">←</button>
+      <span id="month-label"></span>
+      <button type="button" id="btn-next-month" aria-label="Next month">→</button>
+    </div>
+    <div class="section-filter" role="group" aria-label="Filter by section">
+      <button type="button" data-section="all" aria-pressed="true">All sections</button>
+      <button type="button" data-section="reception" aria-pressed="false">Reception</button>
+      <button type="button" data-section="manager" aria-pressed="false">Manager</button>
+      <button type="button" data-section="floor" aria-pressed="false">Floor</button>
+      <button type="button" data-section="groupx" aria-pressed="false">Group X</button>
+    </div>
+  </div>
+  <div class="legend">
+    <span class="legend-item"><span class="dot sec-reception"></span>Reception</span>
+    <span class="legend-item"><span class="dot sec-manager"></span>Manager</span>
+    <span class="legend-item"><span class="dot sec-floor"></span>Floor</span>
+    <span class="legend-item"><span class="dot sec-groupx"></span>Group X</span>
   </div>
   <div class="overflow">
-    <table id="schedule-table" aria-live="polite">
-      <thead><tr id="table-head"></tr></thead>
-      <tbody id="table-body"></tbody>
-    </table>
+    <div class="calendar">
+      <div class="cal-head">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div class="cal-grid" id="cal-grid" aria-live="polite"></div>
+    </div>
   </div>
-  <div id="suggestion-panel" aria-live="polite"></div>
+
+  <div class="absence-panel">
+    <label class="sick-toggle" for="sick-jordan">
+      <input type="checkbox" id="sick-jordan">
+      Mark <strong>Jordan Lee</strong> (Reception) out sick on <span id="sick-date-label"></span>
+    </label>
+    <div id="suggestion-panel" aria-live="polite"></div>
+  </div>
 </div>
 
 <footer>
-  Build branch: <code>claude/loving-dirac-3lulbe</code>. Coverage suggestions are computed from the sample availability data shown above — not a live AI call. Preserve <code>examples/</code> and the current GitHub Pages setup while this preview is reviewed.
+  Build branch: <code>claude/loving-dirac-3lulbe</code>. Shift times and the coverage suggestion are computed from the sample availability data above — not a live AI call. This calendar format is meant to be easy to read at a glance before hand-off, but this preview does not actually send or notify anyone. Preserve <code>examples/</code> and the current GitHub Pages setup while this preview is reviewed.
 </footer>
 </div>
 </div>
@@ -121,155 +158,150 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
 (function(){
   "use strict";
 
-  var DEPARTMENTS = {
-    salesfloor: {
-      label: "Sales Floor",
-      days: ["Mon","Tue","Wed","Thu","Fri"],
-      sickDay: "Wed",
-      employees: [
-        { id:"jordan", name:"Jordan Lee", role:"Cashier", shifts:{Mon:"AM",Tue:"AM",Wed:"AM",Thu:"AM",Fri:"AM"}, canBeOutSick:true },
-        { id:"riley", name:"Riley Chen", role:"Cashier", shifts:{Mon:"PM",Tue:"Off",Wed:"Off",Thu:"PM",Fri:"Off"} },
-        { id:"sam", name:"Sam Patel", role:"Sales Associate", shifts:{Mon:"PM",Tue:"PM",Wed:"PM",Thu:"PM",Fri:"PM"} }
-      ]
-    },
-    stockroom: {
-      label: "Stockroom",
-      days: ["Mon","Tue","Wed","Thu","Fri"],
-      sickDay: null,
-      employees: [
-        { id:"casey", name:"Casey Nguyen", role:"Stock Lead", shifts:{Mon:"AM",Tue:"AM",Wed:"AM",Thu:"AM",Fri:"AM"} },
-        { id:"morgan", name:"Morgan Diaz", role:"Stock Associate", shifts:{Mon:"PM",Tue:"PM",Wed:"PM",Thu:"PM",Fri:"PM"} }
-      ]
-    }
+  var MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var WEEKDAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  var SECTION_ORDER = ["reception","manager","floor","groupx"];
+
+  var SECTIONS = {
+    reception: { label:"Reception", employees:[
+      { id:"jordan", name:"Jordan Lee", role:"Front Desk", canBeOutSick:true,
+        pattern:{ Sun:null, Mon:"8:00 AM–4:00 PM", Tue:"8:00 AM–4:00 PM", Wed:"8:00 AM–4:00 PM", Thu:"8:00 AM–4:00 PM", Fri:"8:00 AM–4:00 PM", Sat:null } },
+      { id:"riley", name:"Riley Chen", role:"Front Desk",
+        pattern:{ Sun:null, Mon:null, Tue:"12:00–8:00 PM", Wed:null, Thu:"12:00–8:00 PM", Fri:null, Sat:"10:00 AM–6:00 PM" } }
+    ]},
+    manager: { label:"Manager", employees:[
+      { id:"alex", name:"Alex Rivera", role:"Shift Manager",
+        pattern:{ Sun:null, Mon:"9:00 AM–5:00 PM", Tue:"9:00 AM–5:00 PM", Wed:"9:00 AM–5:00 PM", Thu:"9:00 AM–5:00 PM", Fri:"9:00 AM–5:00 PM", Sat:null } }
+    ]},
+    floor: { label:"Floor", employees:[
+      { id:"sam", name:"Sam Patel", role:"Sales Associate",
+        pattern:{ Sun:null, Mon:"12:00–8:00 PM", Tue:"12:00–8:00 PM", Wed:"12:00–8:00 PM", Thu:"12:00–8:00 PM", Fri:"12:00–8:00 PM", Sat:"10:00 AM–6:00 PM" } },
+      { id:"casey", name:"Casey Nguyen", role:"Stock Lead",
+        pattern:{ Sun:null, Mon:"7:00 AM–3:00 PM", Tue:"7:00 AM–3:00 PM", Wed:"7:00 AM–3:00 PM", Thu:"7:00 AM–3:00 PM", Fri:"7:00 AM–3:00 PM", Sat:null } }
+    ]},
+    groupx: { label:"Group X", employees:[
+      { id:"morgan", name:"Morgan Diaz", role:"Special Projects",
+        pattern:{ Sun:"11:00 AM–7:00 PM", Mon:null, Tue:"1:00–9:00 PM", Wed:null, Thu:"1:00–9:00 PM", Fri:null, Sat:null } }
+    ]}
   };
 
   var state = {
-    dept: "salesfloor",
-    outSick: {},       // deptKey -> boolean
-    covering: {},       // deptKey -> employeeId of who is covering, or null
-    status: "draft"      // draft | sentback | published
+    year: 2026,
+    month: 8, // September (0-indexed)
+    sectionFilter: "all",
+    outSick: false,
+    covering: null,
+    status: "draft"
   };
 
-  var deptSelect = document.getElementById("dept-select");
-  var tableHead = document.getElementById("table-head");
-  var tableBody = document.getElementById("table-body");
+  var calGrid = document.getElementById("cal-grid");
+  var monthLabel = document.getElementById("month-label");
   var suggestionPanel = document.getElementById("suggestion-panel");
+  var sickBox = document.getElementById("sick-jordan");
+  var sickDateLabel = document.getElementById("sick-date-label");
   var statusPill = document.getElementById("status-pill");
   var statusText = document.getElementById("status-text");
   var btnApprove = document.getElementById("btn-approve");
   var btnSendback = document.getElementById("btn-sendback");
   var btnReset = document.getElementById("btn-reset");
-
-  Object.keys(DEPARTMENTS).forEach(function(key){
-    var opt = document.createElement("option");
-    opt.value = key;
-    opt.textContent = DEPARTMENTS[key].label;
-    deptSelect.appendChild(opt);
-  });
-  deptSelect.value = state.dept;
+  var btnPrevMonth = document.getElementById("btn-prev-month");
+  var btnNextMonth = document.getElementById("btn-next-month");
+  var filterButtons = Array.prototype.slice.call(document.querySelectorAll(".section-filter button"));
 
   function isLocked(){ return state.status === "published"; }
 
-  function findCoverage(dept, day, excludeId){
-    var candidates = dept.employees.filter(function(e){
-      return e.id !== excludeId && e.shifts[day] === "Off";
-    });
-    // Prefer a candidate with a matching role.
-    var excluded = dept.employees.filter(function(e){ return e.id === excludeId; })[0];
-    candidates.sort(function(a,b){
-      var aMatch = excluded && a.role === excluded.role ? 0 : 1;
-      var bMatch = excluded && b.role === excluded.role ? 0 : 1;
-      return aMatch - bMatch;
-    });
-    return candidates[0] || null;
+  // Third occurrence of a given weekday (0=Sun..6=Sat) in the displayed month.
+  function thirdWeekdayOfMonth(year, month, weekdayIndex){
+    var first = new Date(year, month, 1).getDay();
+    var offset = (weekdayIndex - first + 7) % 7;
+    return 1 + offset + 14;
   }
 
-  function renderTable(){
-    var dept = DEPARTMENTS[state.dept];
-    var outSick = !!state.outSick[state.dept];
-    var coveringId = state.covering[state.dept];
+  function renderCalendar(){
+    var year = state.year, month = state.month;
+    var firstDow = new Date(year, month, 1).getDay();
+    var totalDays = new Date(year, month + 1, 0).getDate();
+    var prevMonthDays = new Date(year, month, 0).getDate();
+    var sickDate = thirdWeekdayOfMonth(year, month, 3); // Wednesday
 
-    tableHead.innerHTML = "<th scope=\"col\">Employee</th><th scope=\"col\">Role</th>" +
-      dept.days.map(function(d){ return "<th scope=\"col\">"+d+"</th>"; }).join("");
-
-    tableBody.innerHTML = dept.employees.map(function(e){
-      var cells = dept.days.map(function(day){
-        var val = e.shifts[day];
-        var cls = "off", label = "Off";
-        if (val === "AM"){ cls="am"; label="AM"; }
-        else if (val === "PM"){ cls="pm"; label="PM"; }
-
-        if (outSick && day === dept.sickDay && e.id === firstSickEmployee(dept).id){
-          cls = "sick"; label = "Out sick";
-        }
-        if (coveringId && e.id === coveringId && day === dept.sickDay){
-          cls = "covering"; label = (val === "Off" ? "AM" : val) + " · covering";
-        }
-        return "<td><span class=\"shift "+cls+"\">"+label+"</span></td>";
-      }).join("");
-
-      var sickControl = "";
-      if (e.canBeOutSick && !isLocked()){
-        sickControl = "<div class=\"sick-toggle\"><input type=\"checkbox\" id=\"sick-"+e.id+"\" "+(outSick?"checked":"")+">" +
-          "<label for=\"sick-"+e.id+"\">Mark out sick ("+dept.sickDay+")</label></div>";
-      } else if (e.canBeOutSick && isLocked()){
-        sickControl = "<div class=\"sick-toggle\">Marked out sick ("+dept.sickDay+") — locked, schedule published</div>";
-      }
-
-      return "<tr><td class=\"name\">"+e.name+sickControl+"</td><td class=\"role\">"+e.role+"</td>"+cells+"</tr>";
-    }).join("");
-
-    if (dept.employees.some(function(e){ return e.canBeOutSick; }) && !isLocked()){
-      var box = document.getElementById("sick-" + firstSickEmployee(dept).id);
-      if (box) box.addEventListener("change", onToggleSick);
+    var cells = [];
+    for (var i = 0; i < firstDow; i++){
+      cells.push({ date: prevMonthDays - firstDow + 1 + i, outOfMonth: true });
+    }
+    for (var d = 1; d <= totalDays; d++){
+      cells.push({ date: d, outOfMonth: false, weekday: WEEKDAYS[new Date(year, month, d).getDay()] });
+    }
+    var nextDay = 1;
+    while (cells.length % 7 !== 0){
+      cells.push({ date: nextDay++, outOfMonth: true });
     }
 
-    renderSuggestion();
+    calGrid.innerHTML = cells.map(function(cell){
+      if (cell.outOfMonth){
+        return "<div class=\"cal-cell out-of-month\"><span class=\"cal-date\">" + cell.date + "</span></div>";
+      }
+      var entries = [];
+      SECTION_ORDER.forEach(function(secKey){
+        if (state.sectionFilter !== "all" && state.sectionFilter !== secKey) return;
+        SECTIONS[secKey].employees.forEach(function(emp){
+          var time = emp.pattern[cell.weekday];
+          var isSickHere = state.outSick && secKey === "reception" && emp.id === "jordan" && cell.date === sickDate;
+          var isCoveringHere = state.covering === emp.id && secKey === "reception" && cell.date === sickDate;
+
+          if (isSickHere){
+            entries.push("<span class=\"cal-entry sick\">" + emp.name + " — out sick</span>");
+          } else if (time || isCoveringHere){
+            var cls = "cal-entry sec-" + secKey + (isCoveringHere ? " covering" : "");
+            var label = emp.name + " — " + (time || "covering") + (isCoveringHere ? " (covering)" : "");
+            entries.push("<span class=\"" + cls + "\">" + label + "</span>");
+          }
+        });
+      });
+      return "<div class=\"cal-cell\"><span class=\"cal-date\">" + cell.date + "</span>" + entries.join("") + "</div>";
+    }).join("");
+
+    monthLabel.textContent = MONTH_NAMES[month] + " " + year;
+    sickDateLabel.textContent = MONTH_NAMES[month] + " " + sickDate;
+    sickBox.checked = state.outSick;
+    sickBox.disabled = isLocked();
+
+    renderSuggestion(sickDate, month);
   }
 
-  function firstSickEmployee(dept){
-    return dept.employees.filter(function(e){ return e.canBeOutSick; })[0];
-  }
-
-  function onToggleSick(e){
-    state.outSick[state.dept] = e.target.checked;
-    if (!e.target.checked) state.covering[state.dept] = null;
-    renderTable();
-  }
-
-  function renderSuggestion(){
-    var dept = DEPARTMENTS[state.dept];
-    var outSick = !!state.outSick[state.dept];
+  function renderSuggestion(sickDate, month){
     suggestionPanel.innerHTML = "";
-    if (!outSick){ return; }
+    if (!state.outSick){ return; }
 
-    var sickEmployee = firstSickEmployee(dept);
-    var candidate = findCoverage(dept, dept.sickDay, sickEmployee.id);
-    var coveringId = state.covering[state.dept];
+    var reception = SECTIONS.reception;
+    var sickEmployee = reception.employees.filter(function(e){ return e.canBeOutSick; })[0];
+    var candidate = reception.employees.filter(function(e){
+      return e.id !== sickEmployee.id && !e.pattern.Wed;
+    })[0] || null;
+    var dateLabel = MONTH_NAMES[month] + " " + sickDate;
 
     if (!candidate){
       suggestionPanel.innerHTML = "<div class=\"suggestion none\">" +
-        "<strong>No available coverage found.</strong> No one else in "+dept.label+" is free on "+dept.sickDay+". This needs a manual fix." +
+        "<strong>No available coverage found.</strong> No one else in Reception is free on " + dateLabel + ". This needs a manual fix." +
         "<span class=\"fine\">Computed from the sample availability above — not a live scheduling system.</span></div>";
       return;
     }
 
-    if (coveringId === candidate.id){
-      suggestionPanel.innerHTML = "<div class=\"suggestion\"><strong>Coverage applied (simulated).</strong> "+
-        candidate.name+" is now shown covering "+sickEmployee.name+"'s "+dept.sickDay+" shift." +
+    if (state.covering === candidate.id){
+      suggestionPanel.innerHTML = "<div class=\"suggestion\"><strong>Coverage applied (simulated).</strong> " +
+        candidate.name + " is now shown covering " + sickEmployee.name + "'s " + dateLabel + " shift." +
         "<span class=\"fine\">This updates the preview only — it does not notify anyone or touch a real schedule.</span></div>";
       return;
     }
 
-    suggestionPanel.innerHTML = "<div class=\"suggestion\">"+
-      "<strong>"+sickEmployee.name+"</strong> ("+sickEmployee.role+") is out sick "+dept.sickDay+". " +
-      "Suggested coverage: <strong>"+candidate.name+"</strong> ("+candidate.role+"), who is free that day and not already scheduled." +
+    suggestionPanel.innerHTML = "<div class=\"suggestion\">" +
+      "<strong>" + sickEmployee.name + "</strong> (Reception) is out sick on " + dateLabel + ". " +
+      "Suggested coverage: <strong>" + candidate.name + "</strong> (" + candidate.role + "), who is free that day and not already scheduled." +
       "<div style=\"margin-top:10px\"><button type=\"button\" class=\"primary\" id=\"apply-suggestion\">Apply suggested coverage (simulated)</button></div>" +
       "<span class=\"fine\">Suggestion is computed from the sample availability above — not a live AI call.</span></div>";
 
     document.getElementById("apply-suggestion").addEventListener("click", function(){
-      state.covering[state.dept] = candidate.id;
-      renderTable();
+      state.covering = candidate.id;
+      renderCalendar();
     });
   }
 
@@ -284,15 +316,36 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
     btnReset.hidden = !isLocked();
   }
 
-  deptSelect.addEventListener("change", function(){
-    state.dept = deptSelect.value;
-    renderTable();
+  sickBox.addEventListener("change", function(e){
+    state.outSick = e.target.checked;
+    if (!e.target.checked) state.covering = null;
+    renderCalendar();
+  });
+
+  filterButtons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      state.sectionFilter = btn.getAttribute("data-section");
+      filterButtons.forEach(function(b){ b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+      renderCalendar();
+    });
+  });
+
+  btnPrevMonth.addEventListener("click", function(){
+    state.month--; if (state.month < 0){ state.month = 11; state.year--; }
+    state.outSick = false; state.covering = null;
+    renderCalendar();
+  });
+
+  btnNextMonth.addEventListener("click", function(){
+    state.month++; if (state.month > 11){ state.month = 0; state.year++; }
+    state.outSick = false; state.covering = null;
+    renderCalendar();
   });
 
   btnApprove.addEventListener("click", function(){
     state.status = "published";
     renderStatus();
-    renderTable();
+    renderCalendar();
   });
 
   btnSendback.addEventListener("click", function(){
@@ -303,11 +356,11 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
   btnReset.addEventListener("click", function(){
     state.status = "draft";
     renderStatus();
-    renderTable();
+    renderCalendar();
   });
 
   renderStatus();
-  renderTable();
+  renderCalendar();
 })();
 </script>
 </html>
