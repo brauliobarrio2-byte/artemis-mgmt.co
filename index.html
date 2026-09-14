@@ -1,24 +1,366 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My next idea · The Understudy</title>
-<style>*{box-sizing:border-box}body{margin:0;background:#f5f2e9;color:#20281f;font:18px/1.55 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:40px 6vw}header{display:flex;justify-content:space-between;border-bottom:1px solid #b8bcae;padding-bottom:22px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}.stage{display:grid;grid-template-columns:1.5fr 1fr;gap:7vw;align-items:center;min-height:65vh}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(60px,8vw,112px);letter-spacing:-.06em;line-height:.96;margin:40px 0 25px}p{max-width:530px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase}.mark{height:280px;position:relative;display:grid;place-items:center}.mark span{position:absolute;width:160px;height:220px;border:2px solid #42613b;transform:rotate(var(--r));transition:transform .5s}.mark span:nth-child(1){--r:-25deg}.mark span:nth-child(2){--r:0deg;background:#dbe4be}.mark span:nth-child(3){--r:25deg}.mark:hover span{transform:rotate(calc(var(--r) * 1.3))}a{color:inherit;text-underline-offset:5px}.links{display:flex;flex-wrap:wrap;gap:24px;padding:25px 0}.primary{background:#263d24;color:#fff;padding:12px 20px;text-decoration:none}footer{border-top:1px solid #b8bcae;padding-top:24px;font-size:14px}a:focus-visible{outline:3px solid #a54919;outline-offset:5px}@media(max-width:650px){.stage{display:block;min-height:0}.mark{height:170px;margin:30px 0}.mark span{width:100px;height:140px}header{gap:20px}main{padding:25px 7vw}}@media(prefers-reduced-motion:reduce){.mark span{transition:none}.mark:hover span{transform:rotate(var(--r))}}.live{border-top:1px solid #b8bcae;padding:22px 0 4px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}.live code{flex:1 1 300px;min-width:0;background:#fff;border:1px solid #b8bcae;padding:11px 13px;font-size:14px;overflow-wrap:anywhere}.live button{min-height:44px;padding:11px 18px;font:inherit;font-weight:600;color:#fff;background:#263d24;border:0;cursor:pointer}.live button:focus-visible{outline:3px solid #a54919;outline-offset:5px}.live small{flex-basis:100%;font-size:14px;color:#4a5247}</style>
-<main><header><b>CPVC / The Understudy</b><span>Session 02 · Starter</span></header><section class="stage"><div><h1>A small site.<br>A real beginning.</h1><p>This is my working starter. My own one-page site and one useful interaction come next.</p><p class="eyebrow">Published first. Made mine next.</p></div><div class="mark" aria-hidden="true"><span></span><span></span><span></span></div></section><div class="live"><code id="liveurl">Open this page over http:// or https:// to see its address.</code><button id="copy" type="button">Copy link</button><small id="copyhint">This is the address you submit. Not your GitHub repository address.</small></div><div class="links"><a class="primary" href="https://calpolyvibecoding.com/portal">Submit my live URL ↗</a><a id="guide" href="https://github.com/calpolyvibecoding-01/cpvc-02-understudy-template#readme">Follow the build guide →</a><a href="examples/coast/">See the coastal example →</a></div><footer>Deploy this untouched starter, open the actual live URL, then confirm your portal submission. <strong>STOP 1:</strong> only then brief the agent and build your own idea. Keep the same root URL as your site grows.</footer></main>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Schedule Approval · Artemis Management Co.</title>
+<style>
+:root{--bg:#16181c;--panel:#1e2126;--panel2:#25292f;--line:#363c44;--text:#e7e9ec;--muted:#9aa2ad;--blue:#4f8ef7;--blue-dim:#33507e;--amber:#e0ab3b;--amber2:#caa056;--green:#3fb87f;--red:#e2666a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1180px;margin:auto;padding:28px 5vw 60px}
+header{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+header b{letter-spacing:.02em}
+header .tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.banner{background:#2a2418;border:1px solid #4a3f22;color:#e8cd8a;padding:12px 16px;border-radius:8px;font-size:13.5px;margin-bottom:22px}
+.banner strong{color:#f3dea6}
+.layout{display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:start}
+nav.modules{display:flex;flex-direction:column;gap:6px;position:sticky;top:20px}
+nav.modules h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 4px;padding:0 4px}
+nav.modules button{font:inherit;font-size:13.5px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px 14px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:left}
+nav.modules button[aria-current="true"]{border-color:var(--blue);background:var(--blue-dim);color:#fff}
+nav.modules button[disabled]{cursor:not-allowed;color:var(--muted);opacity:.75}
+nav.modules .lock{font-size:11px;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--muted)}
+.content{min-width:0}
+@media(max-width:760px){.layout{grid-template-columns:1fr}nav.modules{position:static;flex-direction:row;flex-wrap:wrap}nav.modules button{width:auto}}
+h1{font-size:clamp(26px,3.4vw,34px);margin:0 0 6px;font-weight:650;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 24px;max-width:680px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 16px}
+.status-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.status-pill{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:7px 14px;border-radius:999px;border:1px solid var(--line)}
+.status-pill.draft{background:#2a2c30;color:var(--muted)}
+.status-pill.sentback{background:#302716;color:var(--amber2);border-color:#4a3f22}
+.status-pill.published{background:#152a20;color:var(--green);border-color:#245c3c}
+.status-pill .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+button.primary,button.secondary,button.link-btn{font:inherit;font-size:14px;font-weight:600;border-radius:8px;padding:10px 18px;cursor:pointer;border:1px solid transparent}
+button.primary{background:var(--blue);color:#0c1220}
+button.primary:hover{background:#6ba0f9}
+button.secondary{background:transparent;color:var(--text);border-color:var(--line)}
+button.secondary:hover{border-color:var(--muted)}
+button.link-btn{background:none;border:none;color:var(--blue);padding:6px 0;text-decoration:underline;text-underline-offset:3px}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.cal-toolbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.month-nav{display:flex;align-items:center;gap:10px}
+.month-nav button{font:inherit;font-size:13px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+.month-nav span{font-weight:650;font-size:15px;min-width:150px;text-align:center}
+.section-filter{display:flex;flex-wrap:wrap;gap:8px}
+.section-filter button{font:inherit;font-size:12.5px;background:var(--panel2);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+.section-filter button[aria-pressed="true"]{background:var(--blue-dim);color:#fff;border-color:var(--blue)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.legend-item{display:inline-flex;align-items:center;gap:6px}
+.legend .dot{width:9px;height:9px;border-radius:3px;display:inline-block}
+.dot.sec-reception,.cal-entry.sec-reception{background:#1c2c44;color:#8fb4ea}
+.dot.sec-manager,.cal-entry.sec-manager{background:#2a2044;color:#c1a7f0}
+.dot.sec-floor,.cal-entry.sec-floor{background:#173622;color:#7fe0ab}
+.dot.sec-groupx,.cal-entry.sec-groupx{background:#3a2c14;color:#e8c07f}
+.overflow{overflow-x:auto}
+.calendar{min-width:700px}
+.cal-head{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px 8px 0 0;overflow:hidden}
+.cal-head div{background:var(--panel2);padding:8px;text-align:center;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none;border-radius:0 0 8px 8px;overflow:hidden}
+.cal-cell{background:var(--panel);padding:6px;min-height:104px;font-size:11.5px}
+.cal-cell.out-of-month{background:#1a1c20}
+.cal-cell.out-of-month .cal-date{color:#565c64}
+.cal-date{display:block;font-weight:700;font-size:12px;margin-bottom:4px;color:var(--muted)}
+.cal-entry{display:block;margin-bottom:3px;padding:2px 5px;border-radius:4px;line-height:1.3;overflow-wrap:anywhere}
+.cal-entry.sick{background:#3a1e1e;color:#f0a3a3}
+.cal-entry.covering{outline:2px dashed #7fe0ab;outline-offset:-2px}
+.absence-panel{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.sick-toggle{display:flex;align-items:center;gap:8px;font-size:13.5px}
+.suggestion{margin-top:14px;padding:14px 16px;background:#20293a;border:1px solid #33507e;border-radius:8px;font-size:14px}
+.suggestion.none{background:#241f1f;border-color:#4a3232;color:#e0a3a3}
+.suggestion strong{color:#fff}
+.suggestion .fine{display:block;margin-top:8px;font-size:12.5px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-size:13px;color:var(--muted)}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(max-width:600px){main{padding:22px 5vw 40px}.status-row{flex-direction:column;align-items:flex-start}}
+</style>
+<main>
+<header>
+  <b>Artemis Management Co.</b>
+  <span class="tag">Manager Preview · Sample Data</span>
+</header>
+
+<div class="banner"><strong>Sample data only.</strong> This is a simulated preview — the schedule, coverage suggestion, and "published" status are pre-scripted for this demo. No live Wi-Fi, payroll, AI service, sendout/notification service, or real employee records are connected.</div>
+
+<div class="layout">
+<nav class="modules" aria-label="Artemis modules">
+  <h2>Modules</h2>
+  <button type="button" aria-current="true">📅 Scheduling &amp; Coverage</button>
+  <button type="button" disabled aria-disabled="true">👥 Departments &amp; Profiles <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">🕒 Time &amp; Payroll <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">📁 Hiring &amp; Complaints <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">💬 Team Chat <span class="lock">Preview</span></button>
+</nav>
+
+<div class="content">
+<h1>Monthly Schedule — Review &amp; Approve</h1>
+<p class="sub">Review the full month for every section in one calendar, or filter down to just Reception, Manager, Floor, or Group X. Resolve any coverage gap, then approve the month for employees to see — or send it back for edits.</p>
+
+<div class="card">
+  <h2>Approval status</h2>
+  <div class="status-row">
+    <span class="status-pill draft" id="status-pill"><span class="dot"></span><span id="status-text">Draft — pending manager approval</span></span>
+    <div class="actions" id="approval-actions">
+      <button type="button" class="secondary" id="btn-sendback">Send back for edits</button>
+      <button type="button" class="primary" id="btn-approve">Approve schedule</button>
+    </div>
+    <button type="button" class="link-btn" id="btn-reset" hidden>Reset preview (demo only)</button>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Schedule</h2>
+  <div class="cal-toolbar">
+    <div class="month-nav">
+      <button type="button" id="btn-prev-month" aria-label="Previous month">←</button>
+      <span id="month-label"></span>
+      <button type="button" id="btn-next-month" aria-label="Next month">→</button>
+    </div>
+    <div class="section-filter" role="group" aria-label="Filter by section">
+      <button type="button" data-section="all" aria-pressed="true">All sections</button>
+      <button type="button" data-section="reception" aria-pressed="false">Reception</button>
+      <button type="button" data-section="manager" aria-pressed="false">Manager</button>
+      <button type="button" data-section="floor" aria-pressed="false">Floor</button>
+      <button type="button" data-section="groupx" aria-pressed="false">Group X</button>
+    </div>
+  </div>
+  <div class="legend">
+    <span class="legend-item"><span class="dot sec-reception"></span>Reception</span>
+    <span class="legend-item"><span class="dot sec-manager"></span>Manager</span>
+    <span class="legend-item"><span class="dot sec-floor"></span>Floor</span>
+    <span class="legend-item"><span class="dot sec-groupx"></span>Group X</span>
+  </div>
+  <div class="overflow">
+    <div class="calendar">
+      <div class="cal-head">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div class="cal-grid" id="cal-grid" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="absence-panel">
+    <label class="sick-toggle" for="sick-jordan">
+      <input type="checkbox" id="sick-jordan">
+      Mark <strong>Jordan Lee</strong> (Reception) out sick on <span id="sick-date-label"></span>
+    </label>
+    <div id="suggestion-panel" aria-live="polite"></div>
+  </div>
+</div>
+
+<footer>
+  Build branch: <code>claude/loving-dirac-3lulbe</code>. Shift times and the coverage suggestion are computed from the sample availability data above — not a live AI call. This calendar format is meant to be easy to read at a glance before hand-off, but this preview does not actually send or notify anyone. Preserve <code>examples/</code> and the current GitHub Pages setup while this preview is reviewed.
+</footer>
+</div>
+</div>
+</main>
 <script>
 (function(){
-  var box=document.getElementById('liveurl'),btn=document.getElementById('copy'),
-      hint=document.getElementById('copyhint'),guide=document.getElementById('guide');
-  var web=location.protocol==='http:'||location.protocol==='https:';
-  var url=web?location.origin+location.pathname:'';
-  if(web){box.textContent=url;}else{btn.hidden=true;hint.textContent='You are viewing this file directly. Publish it with GitHub Pages to get a real address.';}
-  var host=location.hostname.match(/^([a-z0-9-]+)\.github\.io$/i),
-      repo=location.pathname.split('/').filter(Boolean)[0];
-  if(host&&repo){guide.href='https://github.com/'+host[1]+'/'+repo+'#readme';}
-  btn.addEventListener('click',function(){
-    function pick(){var r=document.createRange();r.selectNodeContents(box);
-      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
-      hint.textContent='Link selected. Press Ctrl+C or Cmd+C to copy it.';}
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(url).then(function(){hint.textContent='Copied. Paste it into the Link field in the portal.';},pick);
-    }else{pick();}
+  "use strict";
+
+  var MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var WEEKDAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  var SECTION_ORDER = ["reception","manager","floor","groupx"];
+
+  var SECTIONS = {
+    reception: { label:"Reception", employees:[
+      { id:"jordan", name:"Jordan Lee", role:"Front Desk", canBeOutSick:true,
+        pattern:{ Sun:null, Mon:"8:00 AM–4:00 PM", Tue:"8:00 AM–4:00 PM", Wed:"8:00 AM–4:00 PM", Thu:"8:00 AM–4:00 PM", Fri:"8:00 AM–4:00 PM", Sat:null } },
+      { id:"riley", name:"Riley Chen", role:"Front Desk",
+        pattern:{ Sun:null, Mon:null, Tue:"12:00–8:00 PM", Wed:null, Thu:"12:00–8:00 PM", Fri:null, Sat:"10:00 AM–6:00 PM" } }
+    ]},
+    manager: { label:"Manager", employees:[
+      { id:"alex", name:"Alex Rivera", role:"Shift Manager",
+        pattern:{ Sun:null, Mon:"9:00 AM–5:00 PM", Tue:"9:00 AM–5:00 PM", Wed:"9:00 AM–5:00 PM", Thu:"9:00 AM–5:00 PM", Fri:"9:00 AM–5:00 PM", Sat:null } }
+    ]},
+    floor: { label:"Floor", employees:[
+      { id:"sam", name:"Sam Patel", role:"Sales Associate",
+        pattern:{ Sun:null, Mon:"12:00–8:00 PM", Tue:"12:00–8:00 PM", Wed:"12:00–8:00 PM", Thu:"12:00–8:00 PM", Fri:"12:00–8:00 PM", Sat:"10:00 AM–6:00 PM" } },
+      { id:"casey", name:"Casey Nguyen", role:"Stock Lead",
+        pattern:{ Sun:null, Mon:"7:00 AM–3:00 PM", Tue:"7:00 AM–3:00 PM", Wed:"7:00 AM–3:00 PM", Thu:"7:00 AM–3:00 PM", Fri:"7:00 AM–3:00 PM", Sat:null } }
+    ]},
+    groupx: { label:"Group X", employees:[
+      { id:"morgan", name:"Morgan Diaz", role:"Special Projects",
+        pattern:{ Sun:"11:00 AM–7:00 PM", Mon:null, Tue:"1:00–9:00 PM", Wed:null, Thu:"1:00–9:00 PM", Fri:null, Sat:null } }
+    ]}
+  };
+
+  var state = {
+    year: 2026,
+    month: 8, // September (0-indexed)
+    sectionFilter: "all",
+    outSick: false,
+    covering: null,
+    status: "draft"
+  };
+
+  var calGrid = document.getElementById("cal-grid");
+  var monthLabel = document.getElementById("month-label");
+  var suggestionPanel = document.getElementById("suggestion-panel");
+  var sickBox = document.getElementById("sick-jordan");
+  var sickDateLabel = document.getElementById("sick-date-label");
+  var statusPill = document.getElementById("status-pill");
+  var statusText = document.getElementById("status-text");
+  var btnApprove = document.getElementById("btn-approve");
+  var btnSendback = document.getElementById("btn-sendback");
+  var btnReset = document.getElementById("btn-reset");
+  var btnPrevMonth = document.getElementById("btn-prev-month");
+  var btnNextMonth = document.getElementById("btn-next-month");
+  var filterButtons = Array.prototype.slice.call(document.querySelectorAll(".section-filter button"));
+
+  function isLocked(){ return state.status === "published"; }
+
+  // Third occurrence of a given weekday (0=Sun..6=Sat) in the displayed month.
+  function thirdWeekdayOfMonth(year, month, weekdayIndex){
+    var first = new Date(year, month, 1).getDay();
+    var offset = (weekdayIndex - first + 7) % 7;
+    return 1 + offset + 14;
+  }
+
+  function renderCalendar(){
+    var year = state.year, month = state.month;
+    var firstDow = new Date(year, month, 1).getDay();
+    var totalDays = new Date(year, month + 1, 0).getDate();
+    var prevMonthDays = new Date(year, month, 0).getDate();
+    var sickDate = thirdWeekdayOfMonth(year, month, 3); // Wednesday
+
+    var cells = [];
+    for (var i = 0; i < firstDow; i++){
+      cells.push({ date: prevMonthDays - firstDow + 1 + i, outOfMonth: true });
+    }
+    for (var d = 1; d <= totalDays; d++){
+      cells.push({ date: d, outOfMonth: false, weekday: WEEKDAYS[new Date(year, month, d).getDay()] });
+    }
+    var nextDay = 1;
+    while (cells.length % 7 !== 0){
+      cells.push({ date: nextDay++, outOfMonth: true });
+    }
+
+    calGrid.innerHTML = cells.map(function(cell){
+      if (cell.outOfMonth){
+        return "<div class=\"cal-cell out-of-month\"><span class=\"cal-date\">" + cell.date + "</span></div>";
+      }
+      var entries = [];
+      SECTION_ORDER.forEach(function(secKey){
+        if (state.sectionFilter !== "all" && state.sectionFilter !== secKey) return;
+        SECTIONS[secKey].employees.forEach(function(emp){
+          var time = emp.pattern[cell.weekday];
+          var isSickHere = state.outSick && secKey === "reception" && emp.id === "jordan" && cell.date === sickDate;
+          var isCoveringHere = state.covering === emp.id && secKey === "reception" && cell.date === sickDate;
+
+          if (isSickHere){
+            entries.push("<span class=\"cal-entry sick\">" + emp.name + " — out sick</span>");
+          } else if (time || isCoveringHere){
+            var cls = "cal-entry sec-" + secKey + (isCoveringHere ? " covering" : "");
+            var label = emp.name + " — " + (time || "covering") + (isCoveringHere ? " (covering)" : "");
+            entries.push("<span class=\"" + cls + "\">" + label + "</span>");
+          }
+        });
+      });
+      return "<div class=\"cal-cell\"><span class=\"cal-date\">" + cell.date + "</span>" + entries.join("") + "</div>";
+    }).join("");
+
+    monthLabel.textContent = MONTH_NAMES[month] + " " + year;
+    sickDateLabel.textContent = MONTH_NAMES[month] + " " + sickDate;
+    sickBox.checked = state.outSick;
+    sickBox.disabled = isLocked();
+
+    renderSuggestion(sickDate, month);
+  }
+
+  function renderSuggestion(sickDate, month){
+    suggestionPanel.innerHTML = "";
+    if (!state.outSick){ return; }
+
+    var reception = SECTIONS.reception;
+    var sickEmployee = reception.employees.filter(function(e){ return e.canBeOutSick; })[0];
+    var candidate = reception.employees.filter(function(e){
+      return e.id !== sickEmployee.id && !e.pattern.Wed;
+    })[0] || null;
+    var dateLabel = MONTH_NAMES[month] + " " + sickDate;
+
+    if (!candidate){
+      suggestionPanel.innerHTML = "<div class=\"suggestion none\">" +
+        "<strong>No available coverage found.</strong> No one else in Reception is free on " + dateLabel + ". This needs a manual fix." +
+        "<span class=\"fine\">Computed from the sample availability above — not a live scheduling system.</span></div>";
+      return;
+    }
+
+    if (state.covering === candidate.id){
+      suggestionPanel.innerHTML = "<div class=\"suggestion\"><strong>Coverage applied (simulated).</strong> " +
+        candidate.name + " is now shown covering " + sickEmployee.name + "'s " + dateLabel + " shift." +
+        "<span class=\"fine\">This updates the preview only — it does not notify anyone or touch a real schedule.</span></div>";
+      return;
+    }
+
+    suggestionPanel.innerHTML = "<div class=\"suggestion\">" +
+      "<strong>" + sickEmployee.name + "</strong> (Reception) is out sick on " + dateLabel + ". " +
+      "Suggested coverage: <strong>" + candidate.name + "</strong> (" + candidate.role + "), who is free that day and not already scheduled." +
+      "<div style=\"margin-top:10px\"><button type=\"button\" class=\"primary\" id=\"apply-suggestion\">Apply suggested coverage (simulated)</button></div>" +
+      "<span class=\"fine\">Suggestion is computed from the sample availability above — not a live AI call.</span></div>";
+
+    document.getElementById("apply-suggestion").addEventListener("click", function(){
+      state.covering = candidate.id;
+      renderCalendar();
+    });
+  }
+
+  function renderStatus(){
+    statusPill.className = "status-pill " + state.status;
+    if (state.status === "draft") statusText.textContent = "Draft — pending manager approval";
+    else if (state.status === "sentback") statusText.textContent = "Sent back for edits";
+    else statusText.textContent = "Published — visible to employees (simulated)";
+
+    btnApprove.disabled = isLocked();
+    btnSendback.disabled = isLocked();
+    btnReset.hidden = !isLocked();
+  }
+
+  sickBox.addEventListener("change", function(e){
+    state.outSick = e.target.checked;
+    if (!e.target.checked) state.covering = null;
+    renderCalendar();
   });
+
+  filterButtons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      state.sectionFilter = btn.getAttribute("data-section");
+      filterButtons.forEach(function(b){ b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+      renderCalendar();
+    });
+  });
+
+  btnPrevMonth.addEventListener("click", function(){
+    state.month--; if (state.month < 0){ state.month = 11; state.year--; }
+    state.outSick = false; state.covering = null;
+    renderCalendar();
+  });
+
+  btnNextMonth.addEventListener("click", function(){
+    state.month++; if (state.month > 11){ state.month = 0; state.year++; }
+    state.outSick = false; state.covering = null;
+    renderCalendar();
+  });
+
+  btnApprove.addEventListener("click", function(){
+    state.status = "published";
+    renderStatus();
+    renderCalendar();
+  });
+
+  btnSendback.addEventListener("click", function(){
+    state.status = "sentback";
+    renderStatus();
+  });
+
+  btnReset.addEventListener("click", function(){
+    state.status = "draft";
+    renderStatus();
+    renderCalendar();
+  });
+
+  renderStatus();
+  renderCalendar();
 })();
 </script>
 </html>

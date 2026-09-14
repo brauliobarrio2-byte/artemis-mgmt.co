@@ -2,11 +2,11 @@
 
 Choose the idea, person, interaction, and visual direction. The agent can help phrase and save your decisions after you approve them. The provided scope and review safeguards stay in place.
 
-- **Thing:** [My one-page website or mini-app and its main interaction.]
-- **Audience:** [One specific person, and what they want to do or understand.]
-- **Requirements:** One working primary interaction; selected states and results are understandable; honor my approved standing rule in AGENTS.md.
-- **Guardrails:** Static browser code. No required external service, keys, accounts, runtime AI, or private data. Label fictional or sample content. Preserve the example and publishing setup. Work on a branch and wait for human review before shipping.
-- **Experience:** [My visual reference or direction and the most important layout or interaction relationship.]
-- **Test:** I can complete the main action, check one boundary or factual claim, and point to my standing rule's effect in the actual preview. After I approve and merge, the same registered Pages URL works.
+- **Thing:** Artemis Management Co. — a workplace app for scheduling, payroll, records, attendance, and communication. Today's preview covers the manager's schedule-approval screen.
+- **Audience:** A department manager who needs to check a simulated schedule suggestion by department/role and approve it (or send it back) before employees see it.
+- **Requirements:** One working primary interaction — viewing a sample full-month schedule (all sections combined in one calendar, or filtered to just Reception, Manager, Floor, or Group X) with a simulated coverage suggestion, and clicking Approve or Send back for edits; selected states and results are understandable; honor my approved standing rule in AGENTS.md.
+- **Guardrails:** Static browser code. No required external service, keys, accounts, runtime AI, or private data. Label fictional or sample content. Preserve the example and publishing setup. Work on a branch and wait for human review before shipping. This preview only shows the manager view (no employee/HR access, no live Wi-Fi or payroll integration yet). The schedule and coverage suggestion are pre-scripted sample logic, clearly labeled as a simulation — no runtime AI call, no external service, no actual sendout/notification to anyone.
+- **Experience:** Dark grayscale base, blue accent color, structured card-based layout in the spirit of Monday.com — a full-month calendar grid with names and shift times per day, a Reception/Manager/Floor/Group X section filter, coverage-suggestion panel, clear Approve/Send-back actions.
+- **Test:** I can complete the main action (approve or send back the month's schedule), check one boundary (a schedule cannot show as "published" without a manager clicking Approve), point to my standing rule's effect in the actual preview (marking an employee "out sick" visibly surfaces a suggested-coverage prompt, and the sample/simulated nature of the schedule and suggestion is visibly labeled), and confirm the section filter actually narrows the calendar to one section at a time. After I approve and merge, the same registered Pages URL works.
 
 The coastal example has a [completed TARGET](examples/coast/SPEC.md). It demonstrates the format, not a required topic.
