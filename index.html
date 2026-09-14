@@ -1,24 +1,304 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My next idea · The Understudy</title>
-<style>*{box-sizing:border-box}body{margin:0;background:#f5f2e9;color:#20281f;font:18px/1.55 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:40px 6vw}header{display:flex;justify-content:space-between;border-bottom:1px solid #b8bcae;padding-bottom:22px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}.stage{display:grid;grid-template-columns:1.5fr 1fr;gap:7vw;align-items:center;min-height:65vh}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(60px,8vw,112px);letter-spacing:-.06em;line-height:.96;margin:40px 0 25px}p{max-width:530px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase}.mark{height:280px;position:relative;display:grid;place-items:center}.mark span{position:absolute;width:160px;height:220px;border:2px solid #42613b;transform:rotate(var(--r));transition:transform .5s}.mark span:nth-child(1){--r:-25deg}.mark span:nth-child(2){--r:0deg;background:#dbe4be}.mark span:nth-child(3){--r:25deg}.mark:hover span{transform:rotate(calc(var(--r) * 1.3))}a{color:inherit;text-underline-offset:5px}.links{display:flex;flex-wrap:wrap;gap:24px;padding:25px 0}.primary{background:#263d24;color:#fff;padding:12px 20px;text-decoration:none}footer{border-top:1px solid #b8bcae;padding-top:24px;font-size:14px}a:focus-visible{outline:3px solid #a54919;outline-offset:5px}@media(max-width:650px){.stage{display:block;min-height:0}.mark{height:170px;margin:30px 0}.mark span{width:100px;height:140px}header{gap:20px}main{padding:25px 7vw}}@media(prefers-reduced-motion:reduce){.mark span{transition:none}.mark:hover span{transform:rotate(var(--r))}}.live{border-top:1px solid #b8bcae;padding:22px 0 4px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}.live code{flex:1 1 300px;min-width:0;background:#fff;border:1px solid #b8bcae;padding:11px 13px;font-size:14px;overflow-wrap:anywhere}.live button{min-height:44px;padding:11px 18px;font:inherit;font-weight:600;color:#fff;background:#263d24;border:0;cursor:pointer}.live button:focus-visible{outline:3px solid #a54919;outline-offset:5px}.live small{flex-basis:100%;font-size:14px;color:#4a5247}</style>
-<main><header><b>CPVC / The Understudy</b><span>Session 02 · Starter</span></header><section class="stage"><div><h1>A small site.<br>A real beginning.</h1><p>This is my working starter. My own one-page site and one useful interaction come next.</p><p class="eyebrow">Published first. Made mine next.</p></div><div class="mark" aria-hidden="true"><span></span><span></span><span></span></div></section><div class="live"><code id="liveurl">Open this page over http:// or https:// to see its address.</code><button id="copy" type="button">Copy link</button><small id="copyhint">This is the address you submit. Not your GitHub repository address.</small></div><div class="links"><a class="primary" href="https://calpolyvibecoding.com/portal">Submit my live URL ↗</a><a id="guide" href="https://github.com/calpolyvibecoding-01/cpvc-02-understudy-template#readme">Follow the build guide →</a><a href="examples/coast/">See the coastal example →</a></div><footer>Deploy this untouched starter, open the actual live URL, then confirm your portal submission. <strong>STOP 1:</strong> only then brief the agent and build your own idea. Keep the same root URL as your site grows.</footer></main>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Schedule Approval · Artemis Management Co.</title>
+<style>
+:root{--bg:#16181c;--panel:#1e2126;--panel2:#25292f;--line:#363c44;--text:#e7e9ec;--muted:#9aa2ad;--blue:#4f8ef7;--blue-dim:#33507e;--amber:#e0ab3b;--amber2:#caa056;--green:#3fb87f;--red:#e2666a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1080px;margin:auto;padding:28px 5vw 60px}
+header{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+header b{letter-spacing:.02em}
+header .tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.banner{background:#2a2418;border:1px solid #4a3f22;color:#e8cd8a;padding:12px 16px;border-radius:8px;font-size:13.5px;margin-bottom:22px}
+.banner strong{color:#f3dea6}
+nav.modules{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+nav.modules button{font:inherit;font-size:13.5px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:8px}
+nav.modules button[aria-current="true"]{border-color:var(--blue);background:var(--blue-dim);color:#fff}
+nav.modules button[disabled]{cursor:not-allowed;color:var(--muted);opacity:.75}
+nav.modules .lock{font-size:11px;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,34px);margin:0 0 6px;font-weight:650;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 24px;max-width:640px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:20px}
+.card h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 16px}
+.status-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.status-pill{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:7px 14px;border-radius:999px;border:1px solid var(--line)}
+.status-pill.draft{background:#2a2c30;color:var(--muted)}
+.status-pill.sentback{background:#302716;color:var(--amber2);border-color:#4a3f22}
+.status-pill.published{background:#152a20;color:var(--green);border-color:#245c3c}
+.status-pill .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+button.primary,button.secondary,button.link-btn{font:inherit;font-size:14px;font-weight:600;border-radius:8px;padding:10px 18px;cursor:pointer;border:1px solid transparent}
+button.primary{background:var(--blue);color:#0c1220}
+button.primary:hover{background:#6ba0f9}
+button.secondary{background:transparent;color:var(--text);border-color:var(--line)}
+button.secondary:hover{border-color:var(--muted)}
+button.link-btn{background:none;border:none;color:var(--blue);padding:6px 0;text-decoration:underline;text-underline-offset:3px}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.dept-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px}
+.dept-row label{font-size:13px;color:var(--muted)}
+select{font:inherit;font-size:14px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
+td.name{font-weight:600}
+td.role{color:var(--muted);font-size:13px}
+.shift{display:inline-block;min-width:64px;text-align:center;padding:4px 8px;border-radius:6px;font-size:13px;font-weight:600}
+.shift.am{background:#1c2c44;color:#8fb4ea}
+.shift.pm{background:#2a2044;color:#c1a7f0}
+.shift.off{background:#24272c;color:var(--muted)}
+.shift.sick{background:#3a1e1e;color:#f0a3a3}
+.shift.covering{background:#173622;color:#7fe0ab}
+.sick-toggle{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);margin-top:4px}
+.suggestion{margin-top:16px;padding:14px 16px;background:#20293a;border:1px solid #33507e;border-radius:8px;font-size:14px}
+.suggestion.none{background:#241f1f;border-color:#4a3232;color:#e0a3a3}
+.suggestion strong{color:#fff}
+.suggestion .fine{display:block;margin-top:8px;font-size:12.5px;color:var(--muted)}
+.overflow{overflow-x:auto}
+footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-size:13px;color:var(--muted)}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(max-width:600px){main{padding:22px 5vw 40px}.status-row{flex-direction:column;align-items:flex-start}}
+</style>
+<main>
+<header>
+  <b>Artemis Management Co.</b>
+  <span class="tag">Manager Preview · Sample Data</span>
+</header>
+
+<div class="banner"><strong>Sample data only.</strong> This is a simulated preview — schedules, coverage suggestions, and "published" status are pre-scripted for this demo. No live Wi-Fi, payroll, AI service, or real employee records are connected.</div>
+
+<nav class="modules" aria-label="Artemis modules">
+  <button type="button" aria-current="true">📅 Scheduling &amp; Coverage</button>
+  <button type="button" disabled aria-disabled="true">👥 Departments &amp; Profiles <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">🕒 Time &amp; Payroll <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">📁 Hiring &amp; Complaints <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">💬 Team Chat <span class="lock">Preview</span></button>
+</nav>
+
+<h1>Weekly Schedule — Review &amp; Approve</h1>
+<p class="sub">Check this week's proposed schedule for your department, resolve any coverage gaps, then approve it for employees to see — or send it back for edits.</p>
+
+<div class="card">
+  <h2>Approval status</h2>
+  <div class="status-row">
+    <span class="status-pill draft" id="status-pill"><span class="dot"></span><span id="status-text">Draft — pending manager approval</span></span>
+    <div class="actions" id="approval-actions">
+      <button type="button" class="secondary" id="btn-sendback">Send back for edits</button>
+      <button type="button" class="primary" id="btn-approve">Approve schedule</button>
+    </div>
+    <button type="button" class="link-btn" id="btn-reset" hidden>Reset preview (demo only)</button>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Schedule</h2>
+  <div class="dept-row">
+    <label for="dept-select">Department</label>
+    <select id="dept-select"></select>
+  </div>
+  <div class="overflow">
+    <table id="schedule-table" aria-live="polite">
+      <thead><tr id="table-head"></tr></thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+  <div id="suggestion-panel" aria-live="polite"></div>
+</div>
+
+<footer>
+  Build branch: <code>claude/loving-dirac-3lulbe</code>. Coverage suggestions are computed from the sample availability data shown above — not a live AI call. Preserve <code>examples/</code> and the current GitHub Pages setup while this preview is reviewed.
+</footer>
+</main>
 <script>
 (function(){
-  var box=document.getElementById('liveurl'),btn=document.getElementById('copy'),
-      hint=document.getElementById('copyhint'),guide=document.getElementById('guide');
-  var web=location.protocol==='http:'||location.protocol==='https:';
-  var url=web?location.origin+location.pathname:'';
-  if(web){box.textContent=url;}else{btn.hidden=true;hint.textContent='You are viewing this file directly. Publish it with GitHub Pages to get a real address.';}
-  var host=location.hostname.match(/^([a-z0-9-]+)\.github\.io$/i),
-      repo=location.pathname.split('/').filter(Boolean)[0];
-  if(host&&repo){guide.href='https://github.com/'+host[1]+'/'+repo+'#readme';}
-  btn.addEventListener('click',function(){
-    function pick(){var r=document.createRange();r.selectNodeContents(box);
-      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
-      hint.textContent='Link selected. Press Ctrl+C or Cmd+C to copy it.';}
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(url).then(function(){hint.textContent='Copied. Paste it into the Link field in the portal.';},pick);
-    }else{pick();}
+  "use strict";
+
+  var DEPARTMENTS = {
+    salesfloor: {
+      label: "Sales Floor",
+      days: ["Mon","Tue","Wed","Thu","Fri"],
+      sickDay: "Wed",
+      employees: [
+        { id:"jordan", name:"Jordan Lee", role:"Cashier", shifts:{Mon:"AM",Tue:"AM",Wed:"AM",Thu:"AM",Fri:"AM"}, canBeOutSick:true },
+        { id:"riley", name:"Riley Chen", role:"Cashier", shifts:{Mon:"PM",Tue:"Off",Wed:"Off",Thu:"PM",Fri:"Off"} },
+        { id:"sam", name:"Sam Patel", role:"Sales Associate", shifts:{Mon:"PM",Tue:"PM",Wed:"PM",Thu:"PM",Fri:"PM"} }
+      ]
+    },
+    stockroom: {
+      label: "Stockroom",
+      days: ["Mon","Tue","Wed","Thu","Fri"],
+      sickDay: null,
+      employees: [
+        { id:"casey", name:"Casey Nguyen", role:"Stock Lead", shifts:{Mon:"AM",Tue:"AM",Wed:"AM",Thu:"AM",Fri:"AM"} },
+        { id:"morgan", name:"Morgan Diaz", role:"Stock Associate", shifts:{Mon:"PM",Tue:"PM",Wed:"PM",Thu:"PM",Fri:"PM"} }
+      ]
+    }
+  };
+
+  var state = {
+    dept: "salesfloor",
+    outSick: {},       // deptKey -> boolean
+    covering: {},       // deptKey -> employeeId of who is covering, or null
+    status: "draft"      // draft | sentback | published
+  };
+
+  var deptSelect = document.getElementById("dept-select");
+  var tableHead = document.getElementById("table-head");
+  var tableBody = document.getElementById("table-body");
+  var suggestionPanel = document.getElementById("suggestion-panel");
+  var statusPill = document.getElementById("status-pill");
+  var statusText = document.getElementById("status-text");
+  var btnApprove = document.getElementById("btn-approve");
+  var btnSendback = document.getElementById("btn-sendback");
+  var btnReset = document.getElementById("btn-reset");
+
+  Object.keys(DEPARTMENTS).forEach(function(key){
+    var opt = document.createElement("option");
+    opt.value = key;
+    opt.textContent = DEPARTMENTS[key].label;
+    deptSelect.appendChild(opt);
   });
+  deptSelect.value = state.dept;
+
+  function isLocked(){ return state.status === "published"; }
+
+  function findCoverage(dept, day, excludeId){
+    var candidates = dept.employees.filter(function(e){
+      return e.id !== excludeId && e.shifts[day] === "Off";
+    });
+    // Prefer a candidate with a matching role.
+    var excluded = dept.employees.filter(function(e){ return e.id === excludeId; })[0];
+    candidates.sort(function(a,b){
+      var aMatch = excluded && a.role === excluded.role ? 0 : 1;
+      var bMatch = excluded && b.role === excluded.role ? 0 : 1;
+      return aMatch - bMatch;
+    });
+    return candidates[0] || null;
+  }
+
+  function renderTable(){
+    var dept = DEPARTMENTS[state.dept];
+    var outSick = !!state.outSick[state.dept];
+    var coveringId = state.covering[state.dept];
+
+    tableHead.innerHTML = "<th scope=\"col\">Employee</th><th scope=\"col\">Role</th>" +
+      dept.days.map(function(d){ return "<th scope=\"col\">"+d+"</th>"; }).join("");
+
+    tableBody.innerHTML = dept.employees.map(function(e){
+      var cells = dept.days.map(function(day){
+        var val = e.shifts[day];
+        var cls = "off", label = "Off";
+        if (val === "AM"){ cls="am"; label="AM"; }
+        else if (val === "PM"){ cls="pm"; label="PM"; }
+
+        if (outSick && day === dept.sickDay && e.id === firstSickEmployee(dept).id){
+          cls = "sick"; label = "Out sick";
+        }
+        if (coveringId && e.id === coveringId && day === dept.sickDay){
+          cls = "covering"; label = (val === "Off" ? "AM" : val) + " · covering";
+        }
+        return "<td><span class=\"shift "+cls+"\">"+label+"</span></td>";
+      }).join("");
+
+      var sickControl = "";
+      if (e.canBeOutSick && !isLocked()){
+        sickControl = "<div class=\"sick-toggle\"><input type=\"checkbox\" id=\"sick-"+e.id+"\" "+(outSick?"checked":"")+">" +
+          "<label for=\"sick-"+e.id+"\">Mark out sick ("+dept.sickDay+")</label></div>";
+      } else if (e.canBeOutSick && isLocked()){
+        sickControl = "<div class=\"sick-toggle\">Marked out sick ("+dept.sickDay+") — locked, schedule published</div>";
+      }
+
+      return "<tr><td class=\"name\">"+e.name+sickControl+"</td><td class=\"role\">"+e.role+"</td>"+cells+"</tr>";
+    }).join("");
+
+    if (dept.employees.some(function(e){ return e.canBeOutSick; }) && !isLocked()){
+      var box = document.getElementById("sick-" + firstSickEmployee(dept).id);
+      if (box) box.addEventListener("change", onToggleSick);
+    }
+
+    renderSuggestion();
+  }
+
+  function firstSickEmployee(dept){
+    return dept.employees.filter(function(e){ return e.canBeOutSick; })[0];
+  }
+
+  function onToggleSick(e){
+    state.outSick[state.dept] = e.target.checked;
+    if (!e.target.checked) state.covering[state.dept] = null;
+    renderTable();
+  }
+
+  function renderSuggestion(){
+    var dept = DEPARTMENTS[state.dept];
+    var outSick = !!state.outSick[state.dept];
+    suggestionPanel.innerHTML = "";
+    if (!outSick){ return; }
+
+    var sickEmployee = firstSickEmployee(dept);
+    var candidate = findCoverage(dept, dept.sickDay, sickEmployee.id);
+    var coveringId = state.covering[state.dept];
+
+    if (!candidate){
+      suggestionPanel.innerHTML = "<div class=\"suggestion none\">" +
+        "<strong>No available coverage found.</strong> No one else in "+dept.label+" is free on "+dept.sickDay+". This needs a manual fix." +
+        "<span class=\"fine\">Computed from the sample availability above — not a live scheduling system.</span></div>";
+      return;
+    }
+
+    if (coveringId === candidate.id){
+      suggestionPanel.innerHTML = "<div class=\"suggestion\"><strong>Coverage applied (simulated).</strong> "+
+        candidate.name+" is now shown covering "+sickEmployee.name+"'s "+dept.sickDay+" shift." +
+        "<span class=\"fine\">This updates the preview only — it does not notify anyone or touch a real schedule.</span></div>";
+      return;
+    }
+
+    suggestionPanel.innerHTML = "<div class=\"suggestion\">"+
+      "<strong>"+sickEmployee.name+"</strong> ("+sickEmployee.role+") is out sick "+dept.sickDay+". " +
+      "Suggested coverage: <strong>"+candidate.name+"</strong> ("+candidate.role+"), who is free that day and not already scheduled." +
+      "<div style=\"margin-top:10px\"><button type=\"button\" class=\"primary\" id=\"apply-suggestion\">Apply suggested coverage (simulated)</button></div>" +
+      "<span class=\"fine\">Suggestion is computed from the sample availability above — not a live AI call.</span></div>";
+
+    document.getElementById("apply-suggestion").addEventListener("click", function(){
+      state.covering[state.dept] = candidate.id;
+      renderTable();
+    });
+  }
+
+  function renderStatus(){
+    statusPill.className = "status-pill " + state.status;
+    if (state.status === "draft") statusText.textContent = "Draft — pending manager approval";
+    else if (state.status === "sentback") statusText.textContent = "Sent back for edits";
+    else statusText.textContent = "Published — visible to employees (simulated)";
+
+    btnApprove.disabled = isLocked();
+    btnSendback.disabled = isLocked();
+    btnReset.hidden = !isLocked();
+  }
+
+  deptSelect.addEventListener("change", function(){
+    state.dept = deptSelect.value;
+    renderTable();
+  });
+
+  btnApprove.addEventListener("click", function(){
+    state.status = "published";
+    renderStatus();
+    renderTable();
+  });
+
+  btnSendback.addEventListener("click", function(){
+    state.status = "sentback";
+    renderStatus();
+  });
+
+  btnReset.addEventListener("click", function(){
+    state.status = "draft";
+    renderStatus();
+    renderTable();
+  });
+
+  renderStatus();
+  renderTable();
 })();
 </script>
 </html>
