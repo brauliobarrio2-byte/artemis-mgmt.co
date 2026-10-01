@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Schedule Approval · Artemis Management Co.</title>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Schedule Approval · BRLO Group</title>
 <style>
 :root{--bg:#16181c;--panel:#1e2126;--panel2:#25292f;--line:#363c44;--text:#e7e9ec;--muted:#9aa2ad;--blue:#4f8ef7;--blue-dim:#33507e;--amber:#e0ab3b;--amber2:#caa056;--green:#3fb87f;--red:#e2666a}
 *{box-sizing:border-box}
@@ -76,20 +76,26 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
 </style>
 <main>
 <header>
-  <b>Artemis Management Co.</b>
+  <b>BRLO Group</b>
   <span class="tag">Manager Preview · Sample Data</span>
 </header>
 
-<div class="banner"><strong>Sample data only.</strong> This is a simulated preview — the schedule, coverage suggestion, and "published" status are pre-scripted for this demo. No live Wi-Fi, payroll, AI service, sendout/notification service, or real employee records are connected.</div>
+<div class="banner"><strong>Sample data only — front-end concept preview.</strong> This is a simulated, static preview — the schedule, coverage suggestion, and "published" status are pre-scripted for this demo. There is no backend, database, authentication, multi-tenant isolation, or real integration behind this page; nothing here enforces real security or permissions. No live Wi-Fi, payroll, AI service, sendout/notification service, or real employee records are connected.</div>
 
 <div class="layout">
-<nav class="modules" aria-label="Artemis modules">
+<nav class="modules" aria-label="BRLO Group modules">
   <h2>Modules</h2>
+  <button type="button" disabled aria-disabled="true">🏠 Dashboard <span class="lock">Preview</span></button>
   <button type="button" aria-current="true">📅 Scheduling &amp; Coverage</button>
   <button type="button" disabled aria-disabled="true">👥 Departments &amp; Profiles <span class="lock">Preview</span></button>
   <button type="button" disabled aria-disabled="true">🕒 Time &amp; Payroll <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">🎓 Onboarding &amp; Knowledge Base <span class="lock">Preview</span></button>
   <button type="button" disabled aria-disabled="true">📁 Hiring &amp; Complaints <span class="lock">Preview</span></button>
-  <button type="button" disabled aria-disabled="true">💬 Team Chat <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">🗓️ Meetings <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">💬 Messages <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">🛠️ Maintenance <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">📊 Executive Overview <span class="lock">Preview</span></button>
+  <button type="button" disabled aria-disabled="true">⚙️ Settings <span class="lock">Preview</span></button>
 </nav>
 
 <div class="content">
@@ -149,7 +155,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px;font-siz
 </div>
 
 <footer>
-  Build branch: <code>claude/loving-dirac-3lulbe</code>. Shift times and the coverage suggestion are computed from the sample availability data above — not a live AI call. This calendar format is meant to be easy to read at a glance before hand-off, but this preview does not actually send or notify anyone. Preserve <code>examples/</code> and the current GitHub Pages setup while this preview is reviewed.
+  Build branch: <code>claude/loving-dirac-3lulbe</code>. Shift times and the coverage suggestion are computed from the sample availability data above — not a live AI call. This calendar format is meant to be easy to read at a glance before hand-off, but this preview does not actually send or notify anyone. This is a static front-end concept only — the full BRLO Group product (multi-tenant backend, real auth, permissions engine, integrations) is out of scope for this GitHub Pages preview. Preserve <code>examples/</code> and the current GitHub Pages setup while this preview is reviewed.
 </footer>
 </div>
 </div>
